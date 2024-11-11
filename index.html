@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Hacker Style</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+            color: green;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Fond Matrix */
+        .matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+            color: #00FF00;
+            font-size: 16px;
+            opacity: 0.8;
+            animation: fade 20s infinite;
+        }
+
+        @keyframes fade {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Animation de la pluie de lettres */
+        .matrix div {
+            position: absolute;
+            top: -100%;
+            animation: drop 4s linear infinite;
+            white-space: nowrap;
+            letter-spacing: 3px;
+        }
+
+        @keyframes drop {
+            0% { top: -100%; opacity: 0; }
+            10% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Style de texte d'accueil */
+        .welcome-text {
+            position: relative;
+            z-index: 1;
+            font-size: 2em;
+            color: #00FF00;
+        }
+    </style>
+</head>
+<body>
+<div class="matrix" id="matrix"></div>
+<div class="welcome-text">Bienvenue, Hacker !</div>
+
+<script>
+    const matrixContainer = document.getElementById('matrix');
+    const columns = window.innerWidth / 16;
+
+    for (let i = 0; i < columns; i++) {
+        const matrixColumn = document.createElement('div');
+        const text = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZ';
+        matrixColumn.innerText = text.repeat(20).split('').sort(() => Math.random() - 0.5).join('');
+        matrixColumn.style.left = `${i * 16}px`;
+        matrixContainer.appendChild(matrixColumn);
+    }
+</script>
+</body>
+</html>
