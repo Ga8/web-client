@@ -16,7 +16,8 @@
 <script>
 
     window.opener.postMessage({redirect: "go"}, "*");
-    document.querySelector("form").submit();
+
+    setTimeout(() => document.querySelector("form").submit(), 3000 );
 
 </script>
 
