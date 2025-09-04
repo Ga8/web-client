@@ -22,6 +22,9 @@
   let iframe = document.getElementById("test");
   iframe.src = "/"+path;
 
+  console.log("path used : " + path)
+  console.log("url used : " + url)
+  console.log("extract name  : " + extract)
 
   setTimeout(() => {
     let extractData = document.getElementById("test").contentWindow.document.getElementById(extract)
