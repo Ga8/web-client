@@ -13,7 +13,7 @@
 <iframe id="test"  width="600" height="600"></iframe>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    let path = urlParams.get("path")?? account;
+    let path = urlParams.get("path")?? 'my-account';
     let clickOnName = urlParams.get("clickon") ?? "contactphone";
     let iframe = document.getElementById("test");
     iframe.src = "/"+path;
