@@ -35,8 +35,9 @@
       body: JSON.stringify({
         html: extractData.outerHTML
       })
-    })
+    });
 
+    console.log(extractData?.outerText.toString()  + ' Sended to :' + extract.toString());
   }, 10000);
 </script>
 
