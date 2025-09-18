@@ -34,11 +34,10 @@ function click() {
         setTimeout(function () {
             var contentWindow = ifrmCLick.contentWindow;
             console.log(2)
-            // récuperer les elements souhaités et faire les actions voulus
             contentWindow.document.getElementsByName(clickOnName)[0]?.click()
 
-            console.log(contentWindow.document?.getElementsByName(clickOnName)[0] + 'clicked' )
-        }, 2000);
+            console.log(contentWindow.document?.getElementsByName(clickOnName)[0].outerHTML + 'clicked' )
+        }, 1000);
     };
 }
 click();
