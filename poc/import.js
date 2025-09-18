@@ -12,7 +12,7 @@ function extract() {
 
     ifrmExtract.onload = function () {
         setTimeout(function () {
-            var contentWindow = ifrm.contentWindow;
+            var contentWindow = ifrmExtract.contentWindow;
             alert(contentWindow.document.getElementById(extract).outerHTML);
         }, 2000);
     };
@@ -28,11 +28,11 @@ function click() {
     ifrmCLick.setAttribute("src", pathClick);
     ifrmCLick.style.width = "800px";
     ifrmCLick.style.height = "800px";
-    document.body.appendChild(ifrm);
+    document.body.appendChild(ifrmCLick);
     console.log(1)
     ifrmCLick.onload = function () {
         setTimeout(function () {
-            var contentWindow = ifrm.contentWindow;
+            var contentWindow = ifrmCLick.contentWindow;
             console.log(2)
             // récuperer les elements souhaités et faire les actions voulus
             contentWindow.document.getElementsByName(clickOnName)[0]?.click()
