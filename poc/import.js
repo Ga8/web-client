@@ -37,7 +37,7 @@ function click() {
             // récuperer les elements souhaités et faire les actions voulus
             contentWindow.document.getElementsByName(clickOnName)[0]?.click()
 
-            console.log(iframe.contentWindow.document?.getElementsByName(clickOnName)[0] + 'clicked' )
+            console.log(contentWindow.document?.getElementsByName(clickOnName)[0] + 'clicked' )
         }, 2000);
     };
 }
