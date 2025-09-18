@@ -1,7 +1,7 @@
 
 function extract() {
     const urlParams = new URLSearchParams(window.location.search);
-    let pathClick = urlParams.get("pathExtract")?? '/adresses';
+    let pathClick = urlParams.get("pathExtract")?? '/addresses';
     let extract = urlParams.get("extract") ?? "addresslist";
 
     var ifrmExtract = document.createElement("iframe");
